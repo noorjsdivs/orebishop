@@ -20,6 +20,9 @@ module.exports = {
         bodyFont: ["DM Sans", "sans-serif"],
         titleFont: ["Poppins", "sans-serif"],
       },
+      colors: {
+        primeColor: "#262626",
+      },
     },
   },
   plugins: [],

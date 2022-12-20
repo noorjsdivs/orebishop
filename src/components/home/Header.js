@@ -23,9 +23,9 @@ const Header = () => {
   });
   return (
     <nav className="h-20 relative">
-      <Flex>
+      <Flex className="flex items-center justify-between h-full">
         <div>
-          <Image className="w-16 object-cover" imgSrc={logo} />
+          <Image className="w-20 object-cover" imgSrc={logo} />
         </div>
         <div>
           <HiMenuAlt2

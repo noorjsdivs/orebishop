@@ -1,9 +1,7 @@
 import React from "react";
 
-const Flex = ({ children }) => {
-  return (
-    <div className="flex items-center justify-between h-full">{children}</div>
-  );
+const Flex = ({ children, className }) => {
+  return <div className={className}>{children}</div>;
 };
 
 export default Flex;
