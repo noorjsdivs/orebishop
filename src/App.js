@@ -5,15 +5,16 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import Header from "./components/home/Header";
-import NavBottom from "./components/home/NavBottom";
+import Header from "./components/home/Header/Header";
+import HeaderBottom from "./components/home/Header/HeaderBottom";
 import Home from "./pages/Home/Home";
+import Offer from "./pages/Home/Offer/Offer";
 
 const Layout = () => {
   return (
     <div>
       <Header />
-      <NavBottom />
+      <HeaderBottom />
       <Outlet />
     </div>
   );
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />}></Route>
+      <Route path="/offer" element={<Offer />}></Route>
     </Route>
   )
 );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import {
   bannerImgOne,
@@ -56,17 +57,23 @@ const Banner = () => {
     ),
   };
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       <Slider {...settings}>
-        <div>
-          <Image imgSrc={bannerImgOne} />
-        </div>
-        <div>
-          <Image imgSrc={bannerImgTwo} />
-        </div>
-        <div>
-          <Image imgSrc={bannerImgThree} />
-        </div>
+        <Link to="/offer">
+          <div>
+            <Image imgSrc={bannerImgOne} />
+          </div>
+        </Link>
+        <Link to="/offer">
+          <div>
+            <Image imgSrc={bannerImgTwo} />
+          </div>
+        </Link>
+        <Link to="/offer">
+          <div>
+            <Image imgSrc={bannerImgThree} />
+          </div>
+        </Link>
       </Slider>
     </div>
   );

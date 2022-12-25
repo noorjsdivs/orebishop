@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
-import { logo } from "../../assets/images";
-import Image from "../designLayouts/Image";
-import { navBarList } from "../../constants";
-import Flex from "../designLayouts/Flex";
-import List from "../designLayouts/List";
-import ListItem from "../designLayouts/ListItem";
+import { logo } from "../../../assets/images";
+import Image from "../../designLayouts/Image";
+import { navBarList } from "../../../constants";
+import List from "../../designLayouts/List";
+import ListItem from "../../designLayouts/ListItem";
+import { Link } from "react-router-dom";
+import Flex from "../../designLayouts/Flex";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
@@ -24,9 +25,11 @@ const Header = () => {
   return (
     <nav className="h-20 max-w-container mx-auto relative">
       <Flex className="flex items-center justify-between h-full">
-        <div>
-          <Image className="w-20 object-cover" imgSrc={logo} />
-        </div>
+        <Link to="/">
+          <div>
+            <Image className="w-20 object-cover" imgSrc={logo} />
+          </div>
+        </Link>
         <div>
           <HiMenuAlt2
             onClick={() => setShowMenu(!showMenu)}

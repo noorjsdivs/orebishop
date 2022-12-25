@@ -1,21 +1,23 @@
 import React, { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
-import Flex from "../designLayouts/Flex";
+import Flex from "../../designLayouts/Flex";
 
-const NavBottom = () => {
+const HeaderBottom = () => {
   const [show, setShow] = useState(false);
-  let ref = useRef();
+  const [showUser, setShowUser] = useState(false);
+  const ref = useRef();
   useEffect(() => {
     document.body.addEventListener("click", (e) => {
-      // console.log(e.target);
       if (ref.current.contains(e.target)) {
         setShow(true);
       } else {
         setShow(false);
       }
     });
-  }, [show]);
+  }, [show, ref]);
+
   return (
     <div className="w-full bg-[#F5F5F3]">
       <div className="max-w-container mx-auto">
@@ -23,13 +25,18 @@ const NavBottom = () => {
           <div
             onClick={() => setShow(!show)}
             ref={ref}
-            className="flex cursor-pointer items-center gap-2 text-primeColor"
+            className="flex h-14 cursor-pointer items-center gap-2 text-primeColor"
           >
             <HiOutlineMenuAlt4 className="w-5 h-5" />
             <p className="text-[14px] font-normal">Shop by Category</p>
 
             {show && (
-              <ul className="absolute top-40 z-50 bg-primeColor text-[#767676] h-auto p-4 pb-6">
+              <motion.ul
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-36 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
+              >
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
                   Accessories
                 </li>
@@ -42,7 +49,7 @@ const NavBottom = () => {
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
                   Bags
                 </li>
-              </ul>
+              </motion.ul>
             )}
           </div>
           <div className="relative w-[600px] h-[50px] text-base text-primeColor bg-white flex items-center justify-between px-6">
@@ -53,11 +60,32 @@ const NavBottom = () => {
             />
             <FaSearch className="w-5 h-5" />
           </div>
-          <div className="flex gap-4 items-center pr-6">
-            <div className="flex">
+          <div className="flex gap-4 items-center pr-6 cursor-pointer">
+            <div onClick={() => setShowUser(!showUser)} className="flex">
               <FaUser />
               <FaCaretDown />
             </div>
+            {showUser && (
+              <motion.ul
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-36 right-6 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
+              >
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Login
+                </li>
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Sign Up
+                </li>
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Profile
+                </li>
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Others
+                </li>
+              </motion.ul>
+            )}
             <div>
               <FaShoppingCart />
             </div>
@@ -68,4 +96,4 @@ const NavBottom = () => {
   );
 };
 
-export default NavBottom;
+export default HeaderBottom;

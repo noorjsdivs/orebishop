@@ -22,6 +22,7 @@ module.exports = {
       },
       colors: {
         primeColor: "#262626",
+        lightText: "#6D6D6D",
       },
     },
   },
