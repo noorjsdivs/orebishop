@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sale = () => {
-  return <div>Sale</div>;
+  return <div className="max-w-container mx-auto py-10">Sale</div>;
 };
 
 export default Sale;
