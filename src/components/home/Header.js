@@ -18,11 +18,11 @@ const Header = () => {
         setShowMenu(true);
       }
     };
-    // ResponsiveMenu();
+
     window.addEventListener("resize", ResponsiveMenu);
   });
   return (
-    <nav className="h-20 relative">
+    <nav className="h-20 max-w-container mx-auto relative">
       <Flex className="flex items-center justify-between h-full">
         <div>
           <Image className="w-20 object-cover" imgSrc={logo} />
