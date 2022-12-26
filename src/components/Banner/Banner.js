@@ -55,6 +55,49 @@ const Banner = () => {
         0{i + 1}
       </div>
     ),
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          dots: true,
+          appendDots: (dots) => (
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "2%",
+                transform: "translateY(-50%)",
+              }}
+            >
+              <ul style={{ margin: "0px" }}> {dots} </ul>
+            </div>
+          ),
+          customPaging: (i) => (
+            <div
+              style={
+                i === dotActive
+                  ? {
+                      width: "25px",
+                      color: "#262626",
+                      borderRight: "3px #262626 solid",
+                      cursor: "pointer",
+                      fontSize: "12px",
+                    }
+                  : {
+                      width: "25px",
+                      color: "transparent",
+                      borderRight: "3px white solid",
+                      cursor: "pointer",
+                      fontSize: "12px",
+                    }
+              }
+            >
+              0{i + 1}
+            </div>
+          ),
+        },
+      },
+    ],
   };
   return (
     <div className="w-full bg-white">

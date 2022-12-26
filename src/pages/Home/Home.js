@@ -5,7 +5,7 @@ import Sale from "../../components/home/Sale/Sale";
 
 const Home = () => {
   return (
-    <div className="w-full mx-auto mb-52">
+    <div className="w-full mx-auto">
       <Banner />
       <BannerBottom />
       <Sale />
