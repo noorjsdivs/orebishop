@@ -8,7 +8,7 @@ import {
 import Header from "./components/home/Header/Header";
 import HeaderBottom from "./components/home/Header/HeaderBottom";
 import Home from "./pages/Home/Home";
-import Offer from "./pages/Home/Offer/Offer";
+import Offer from "./pages/Offer/Offer";
 
 const Layout = () => {
   return (

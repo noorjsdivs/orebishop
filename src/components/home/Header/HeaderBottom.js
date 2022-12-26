@@ -21,7 +21,7 @@ const HeaderBottom = () => {
   return (
     <div className="w-full bg-[#F5F5F3]">
       <div className="max-w-container mx-auto">
-        <Flex className="flex items-center justify-between w-full h-24">
+        <Flex className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full px-4 pb-4 lg:pb-0 h-full lg:h-24">
           <div
             onClick={() => setShow(!show)}
             ref={ref}
@@ -52,15 +52,15 @@ const HeaderBottom = () => {
               </motion.ul>
             )}
           </div>
-          <div className="relative w-[600px] h-[50px] text-base text-primeColor bg-white flex items-center justify-between px-6">
+          <div className="relative w-full lg:w-[600px] h-[50px] text-base text-primeColor bg-white flex items-center justify-between px-6">
             <input
-              className="w-[80%] h-full outline-none placeholder:text-[#C4C4C4] placeholder:text-[14px]"
+              className="max-w-[80%] h-full outline-none placeholder:text-[#C4C4C4] placeholder:text-[14px]"
               type="text"
               placeholder="Search Products"
             />
             <FaSearch className="w-5 h-5" />
           </div>
-          <div className="flex gap-4 items-center pr-6 cursor-pointer">
+          <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer">
             <div onClick={() => setShowUser(!showUser)} className="flex">
               <FaUser />
               <FaCaretDown />
@@ -70,7 +70,7 @@ const HeaderBottom = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-36 right-6 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
+                className="absolute top-56 lg:top-36 left-0 lg:right-6 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
               >
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
                   Login

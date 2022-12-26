@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { motion } from "framer-motion";
 import { logo } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
 import { navBarList } from "../../../constants";
-import List from "../../designLayouts/List";
-import ListItem from "../../designLayouts/ListItem";
 import { Link } from "react-router-dom";
 import Flex from "../../designLayouts/Flex";
 
@@ -12,18 +11,19 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
 
   useEffect(() => {
-    let ResponsiveMenu = (e) => {
+    let ResponsiveMenu = () => {
       if (window.innerWidth < 769) {
         setShowMenu(false);
       } else {
         setShowMenu(true);
       }
     };
+    ResponsiveMenu();
 
     window.addEventListener("resize", ResponsiveMenu);
-  });
+  }, []);
   return (
-    <nav className="h-20 max-w-container mx-auto relative">
+    <nav className="h-20 px-4 max-w-container mx-auto relative">
       <Flex className="flex items-center justify-between h-full">
         <Link to="/">
           <div>
@@ -33,21 +33,27 @@ const Header = () => {
         <div>
           <HiMenuAlt2
             onClick={() => setShowMenu(!showMenu)}
-            className="bg-red-400 flex mdl:hidden cursor-pointer w-8 h-6 absolute top-6 right-4"
+            className="flex md:hidden cursor-pointer w-8 h-6 absolute top-6 right-4"
           />
-          <List className="flex gap-1">
-            {showMenu && (
+          {showMenu && (
+            <motion.ul
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center absolute md:static right-0 top-14 md:top-0 px-6 py-4 md:px-0 md:py-0 md:w-auto z-50 lg:p-0 bg-primeColor md:bg-transparent md:flex-row gap-2"
+            >
               <>
                 {navBarList.map(({ _id, title }) => (
-                  <ListItem
-                    className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12  text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] border-r-[2px] border-r-gray-300 hover:border-r-[#262626] hoverEffect last:border-r-0"
+                  <li
+                    className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-gray-400 hover:text-white md:text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] md:hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hover:border-r-[#262626] hoverEffect last:border-r-0"
                     key={_id}
-                    itemName={title}
-                  />
+                  >
+                    {title}
+                  </li>
                 ))}
               </>
-            )}
-          </List>
+            </motion.ul>
+          )}
         </div>
       </Flex>
     </nav>
