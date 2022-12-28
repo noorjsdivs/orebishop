@@ -5,6 +5,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import Footer from "./components/home/Footer/Footer";
 import Header from "./components/home/Header/Header";
 import HeaderBottom from "./components/home/Header/HeaderBottom";
 import Home from "./pages/Home/Home";
@@ -16,6 +17,7 @@ const Layout = () => {
       <Header />
       <HeaderBottom />
       <Outlet />
+      <Footer />
     </div>
   );
 };
