@@ -12,7 +12,7 @@ const Header = () => {
   const location = useLocation();
   useEffect(() => {
     let ResponsiveMenu = () => {
-      if (window.innerWidth < 769) {
+      if (window.innerWidth < 73) {
         setShowMenu(false);
       } else {
         setShowMenu(true);

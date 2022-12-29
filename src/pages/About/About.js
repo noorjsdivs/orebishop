@@ -9,7 +9,7 @@ const About = () => {
     setPrevLocation(location.state.data);
   }, [location]);
   return (
-    <div className="max-w-container mx-auto">
+    <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="About" prevLocation={prevLocation} />
     </div>
   );

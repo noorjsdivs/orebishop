@@ -16,11 +16,13 @@ nav .active li {
   font-weight: 600;
   text-decoration: 1px underline black;
 }
-@media screen and (max-width: 769px) {
+
+@media screen and (max-width: 500px) {
   nav .active li {
     color: white;
     font-weight: 600;
     text-decoration: 1px underline white;
   }
 }
+
 /* ============= NavLink active End here ================ */

@@ -8,17 +8,21 @@ const Breadcrumbs = ({ prevLocation, title }) => {
   useEffect(() => {
     setLocationPath(location.pathname.split("/")[1]);
   }, [location]);
+
   return (
-    <div className="w-full py-20 flex flex-col gap-2">
+    <div className="w-full py-20 flex flex-col gap-3">
       <h1 className="text-5xl text-primeColor font-titleFont font-bold">
         {title}
       </h1>
       <p className="text-sm font-normal text-lightText capitalize flex items-center">
-        {prevLocation === "" ? "Home" : prevLocation}
+        <span> {prevLocation === "" ? "Home" : prevLocation}</span>
+
         <span className="px-1">
           <HiOutlineChevronRight />
         </span>
-        <span className="capitalize"> {locationPath}</span>
+        <span className="capitalize font-semibold text-primeColor">
+          {locationPath}
+        </span>
       </p>
     </div>
   );
