@@ -9,3 +9,18 @@
     @apply duration-300 cursor-pointer;
   }
 }
+
+/* ============= NavLink active Start here ============== */
+nav .active li {
+  color: black;
+  font-weight: 600;
+  text-decoration: 1px underline black;
+}
+@media screen and (max-width: 769px) {
+  nav .active li {
+    color: white;
+    font-weight: 600;
+    text-decoration: 1px underline white;
+  }
+}
+/* ============= NavLink active End here ================ */

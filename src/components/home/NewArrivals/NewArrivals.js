@@ -1,4 +1,5 @@
 import React from "react";
+import Slider from "react-slick";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
 import {
@@ -7,41 +8,94 @@ import {
   newArrThree,
   newArrFour,
 } from "../../../assets/images/index";
+import SampleNextArrow from "./SampleNextArrow";
+import SamplePrevArrow from "./SamplePrevArrow";
 
 const NewArrivals = () => {
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
+  };
   return (
     <div className="w-full pb-16">
       <Heading heading="New Arrivals" />
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
-        <Product
-          img={newArrOne}
-          productName="Round Table Clock"
-          price="44.00"
-          color="Black"
-          badge={true}
-        />
-        <Product
-          img={newArrTwo}
-          productName="Smart Watch"
-          price="250.00"
-          color="Black"
-          badge={true}
-        />
-        <Product
-          img={newArrThree}
-          productName="cloth Basket"
-          price="80.00"
-          color="Mixed"
-          badge={true}
-        />
-        <Product
-          img={newArrFour}
-          productName="Funny toys for babies"
-          price="60.00"
-          color="Mixed"
-          badge={false}
-        />
-      </div>
+      <Slider {...settings}>
+        <div className="px-2">
+          <Product
+            img={newArrOne}
+            productName="Round Table Clock"
+            price="44.00"
+            color="Black"
+            badge={true}
+          />
+        </div>
+        <div className="px-2">
+          <Product
+            img={newArrTwo}
+            productName="Smart Watch"
+            price="250.00"
+            color="Black"
+            badge={true}
+          />
+        </div>
+        <div className="px-2">
+          <Product
+            img={newArrThree}
+            productName="cloth Basket"
+            price="80.00"
+            color="Mixed"
+            badge={true}
+          />
+        </div>
+        <div className="px-2">
+          <Product
+            img={newArrFour}
+            productName="Funny toys for babies"
+            price="60.00"
+            color="Mixed"
+            badge={false}
+          />
+        </div>
+        <div className="px-2">
+          <Product
+            img={newArrTwo}
+            productName="Funny toys for babies"
+            price="60.00"
+            color="Mixed"
+            badge={false}
+          />
+        </div>
+      </Slider>
     </div>
   );
 };
