@@ -12,14 +12,13 @@ const Header = () => {
   const location = useLocation();
   useEffect(() => {
     let ResponsiveMenu = () => {
-      if (window.innerWidth < 73) {
+      if (window.innerWidth < 735) {
         setShowMenu(false);
       } else {
         setShowMenu(true);
       }
     };
     ResponsiveMenu();
-
     window.addEventListener("resize", ResponsiveMenu);
   }, []);
   return (

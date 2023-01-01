@@ -17,7 +17,7 @@ nav .active li {
   text-decoration: 1px underline black;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 735px) {
   nav .active li {
     color: white;
     font-weight: 600;
