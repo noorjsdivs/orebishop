@@ -7,6 +7,7 @@ import {
   spfThree,
   spfFour,
 } from "../../../assets/images/index";
+
 const SpecialOffers = () => {
   return (
     <div className="w-full pb-20">
@@ -18,6 +19,7 @@ const SpecialOffers = () => {
           price="35.00"
           color="Blank and White"
           badge={true}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           img={spfTwo}
@@ -25,6 +27,7 @@ const SpecialOffers = () => {
           price="180.00"
           color="Gray"
           badge={true}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           img={spfThree}
@@ -32,6 +35,7 @@ const SpecialOffers = () => {
           price="25.00"
           color="Mixed"
           badge={true}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           img={spfFour}
@@ -39,6 +43,7 @@ const SpecialOffers = () => {
           price="220.00"
           color="Black"
           badge={true}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
       </div>
     </div>

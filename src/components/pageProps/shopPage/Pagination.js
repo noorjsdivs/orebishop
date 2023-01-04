@@ -16,6 +16,7 @@ function Items({ currentItems }) {
               price={item.price}
               color={item.color}
               badge={item.badge}
+              des={item.des}
             />
           </div>
         ))}

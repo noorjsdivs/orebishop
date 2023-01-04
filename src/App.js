@@ -4,6 +4,7 @@ import {
   Outlet,
   createRoutesFromElements,
   Route,
+  ScrollRestoration,
 } from "react-router-dom";
 import Footer from "./components/home/Footer/Footer";
 import FooterBottom from "./components/home/Footer/FooterBottom";
@@ -14,6 +15,7 @@ import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
 
 const Layout = () => {
@@ -21,6 +23,7 @@ const Layout = () => {
     <div>
       <Header />
       <HeaderBottom />
+      <ScrollRestoration />
       <Outlet />
       <Footer />
       <FooterBottom />
@@ -38,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="/journal" element={<Journal />}></Route>
       {/* ==================== Header Navlink End here ===================== */}
       <Route path="/offer" element={<Offer />}></Route>
+      <Route path="/product/:_id" element={<ProductDetails />}></Route>
     </Route>
   )
 );

@@ -19,6 +19,7 @@ const BestSellers = () => {
           price="35.00"
           color="Blank and White"
           badge={true}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           img={bestSellerTwo}
@@ -26,6 +27,7 @@ const BestSellers = () => {
           price="180.00"
           color="Gray"
           badge={false}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           img={bestSellerThree}
@@ -33,6 +35,7 @@ const BestSellers = () => {
           price="25.00"
           color="Mixed"
           badge={true}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
         <Product
           img={bestSellerFour}
@@ -40,6 +43,7 @@ const BestSellers = () => {
           price="220.00"
           color="Black"
           badge={false}
+          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
         />
       </div>
     </div>
