@@ -9,7 +9,7 @@ const SpecialCase = () => {
         <div className="flex justify-center items-center">
           <MdSwitchAccount className="text-2xl -translate-x-12 group-hover:translate-x-3 transition-transform duration-200" />
 
-          <MdSwitchAccount className="text-3xl -translate-x-3 group-hover:translate-x-12 transition-transform duration-200" />
+          <MdSwitchAccount className="text-2xl -translate-x-3 group-hover:translate-x-12 transition-transform duration-200" />
         </div>
         <p className="text-xs font-semibold font-titleFont">Profile</p>
       </div>
