@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
-import { SplOfferData } from "../../constants";
+import ProductInfo from "../../components/pageProps/productDetails/ProductInfo";
+import ProductsOnSale from "../../components/pageProps/productDetails/ProductsOnSale";
 
 const ProductDetails = () => {
   const location = useLocation();
@@ -14,66 +15,24 @@ const ProductDetails = () => {
   }, [location, productInfo]);
 
   return (
-    <div className="w-full mx-auto">
-      <div className="max-w-container mx-auto">
-        <div className="-mt-10">
+    <div className="w-full mx-auto border-b-[1px] border-b-gray-300">
+      <div className="max-w-container mx-auto px-4">
+        <div className="xl:-mt-10 -mt-7">
           <Breadcrumbs title="" prevLocation={prevLocation} />
         </div>
-        <div className="w-full flex gap-4 h-full -mt-10 pb-20 bg-gray-100 p-4">
-          <div className="w-1/6 h-full">
-            <h3 className="font-titleFont text-xl font-semibold mb-6 underline underline-offset-4 decoration-[1px]">
-              Products on sale
-            </h3>
-            <div className="flex flex-col gap-2">
-              {SplOfferData.map((item) => (
-                <div
-                  key={item._id}
-                  className="flex items-center gap-4 border-b-[1px] border-b-gray-300 py-2"
-                >
-                  <div>
-                    <img className="w-24" src={item.img} alt={item.img} />
-                  </div>
-                  <div className="flex flex-col gap-2 font-titleFont">
-                    <p className="text-base font-medium">{item.productName}</p>
-                    <p className="text-sm font-semibold">${item.price}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4 h-full -mt-5 xl:-mt-10 pb-10 bg-gray-100 p-4">
+          <div className="h-full">
+            <ProductsOnSale />
           </div>
-          <div className="w-2/6">
+          <div className="h-full xl:col-span-2">
             <img
               className="w-full h-full object-cover"
               src={productInfo.img}
               alt={productInfo.img}
             />
           </div>
-          <div className="w-3/6 h-full p-14 flex flex-col gap-6 justify-center">
-            <h2 className="text-4xl font-semibold">
-              {productInfo.productName}
-            </h2>
-            <p className="text-xl font-semibold">${productInfo.price}</p>
-            <p className="text-base text-gray-600">{productInfo.des}</p>
-            <p className="text-sm">Be the first to leave a review.</p>
-            <p className="font-medium text-lg">
-              <span className="font-normal">Colors:</span> {productInfo.color}
-            </p>
-            <p className="w-full h-14 flex items-center justify-between bg-white">
-              <span className="w-14 h-full text-2xl flex items-center justify-center hover:bg-gray-200 duration-300 cursor-pointer">
-                -
-              </span>
-              1
-              <span className="w-14 h-full text-2xl flex items-center justify-center hover:bg-gray-200 duration-300 cursor-pointer">
-                +
-              </span>
-            </p>
-            <button className="w-full py-4 bg-primeColor hover:bg-black duration-300 text-white text-lg font-titleFont">
-              Add to Cart
-            </button>
-            <p className="font-normal text-sm">
-              <span className="text-base font-medium"> Categories:</span> Spring
-              collection, Streetwear, Women Tags: featured SKU: N/A
-            </p>
+          <div className="h-full w-full md:col-span-2 xl:col-span-3 xl:p-14 flex flex-col gap-6 justify-center">
+            <ProductInfo productInfo={productInfo} />
           </div>
         </div>
       </div>
